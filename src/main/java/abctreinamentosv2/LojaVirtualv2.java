@@ -2,11 +2,10 @@ package abctreinamentosv2;
 
 import java.nio.file.Paths;
 import java.util.*;
-import java.util.HashMap;
 import java.util.stream.Collectors;
 
 
-public class LojaVirtual {
+public class LojaVirtualv2 {
     private static HashMap<Cliente, Set<Curso>> pagamentos = new HashMap<>(); // Recebe um cliente e a lista de cursos desse cliente
 
     static float totalReceita = 0;

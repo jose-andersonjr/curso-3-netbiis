@@ -20,5 +20,6 @@ Aula 20/10:
 1.b) Criar um método para listar o total de receita auferida
 1.c) Criar um método para listar todos os clientes por ordem de valor gasto na aquisição dos cursos
 
+2. Recriar os métodos da questão anterior sem o uso de Stream
 
-2.
+Aula 22/10:
