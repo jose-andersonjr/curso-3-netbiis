@@ -1,4 +1,17 @@
+/******************************/
 package sisrestaurante;
+
+/******************************/
+/**
+ * <h1>Pedido</h1>
+ * Esta classe pode instanciar objeto do tipo Pedido para gerenciar as compras de um Cliente;
+ * <p>
+ * @author José Anderson
+ * @version 1.0
+ * @since 15-10-2022
+ * </p>
+ */
+/****************************/
 
 import java.awt.*;
 import java.util.LinkedHashSet;
@@ -17,6 +30,13 @@ public class Pedido implements IDAO{
 
     // Constructors
 
+    /**
+     * Construtor da classe Pedido, cria uma pedido
+     * @param produtos
+     * @param taxaEntrega
+     * @param descricao
+     * @param valorTotal
+     */
     public Pedido(LinkedList<Produto> produtos, float taxaEntrega, String descricao, float valorTotal) {
         this.produtos = produtos;
         this.taxaEntrega = taxaEntrega;
@@ -27,41 +47,75 @@ public class Pedido implements IDAO{
 
     // Getters and Setters
 
-
+    /**
+     * Retorna o valor d
+     * @return
+     */
     public float getTaxaEntrega() {
         return taxaEntrega;
     }
 
+    /**
+     * Modifica o valor da taxa de entrega do Pedido
+     * @param taxaEntrega
+     */
     public void setTaxaEntrega(float taxaEntrega) {
         this.taxaEntrega = taxaEntrega;
     }
-
+    /**
+     * Retorna o valor da descrição
+     * @return
+     */
     public String getDescricao() {
         return descricao;
     }
 
+    /**
+     * Modifica o valor da descrição do Pedido
+     * @param descricao
+     */
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+    /**
+     * Retorna o valor da lista de produtos
+     * @return
+     */
     public LinkedList<Produto> getProdutos() {
         return produtos;
     }
 
+    /**
+     * Modifica os valores da lista de produtos
+     * @param produtos
+     */
     public void setProdutos(LinkedList<Produto> produtos) {
         this.produtos = produtos;
     }
 
     // Methods
+
+    /**
+     * Adiciona um novo item na lista de Produtos
+     * @param produto produto a ser inserido
+     */
     public void adicionarItem(Produto produto){
         this.produtos.add(produto);
     }
 
+    /**
+     * Remove um item da lista de produtos
+     * @param produto produtoa ser removido
+     */
     public void removerItem(Produto produto){
         this.produtos.remove(produto);
     }
 
 
-
+    /**
+     * Faz o retorno adequado dos nomes do atributos do Pedido
+     * @return
+     */
     @Override
     public String toString() {
         return "Pedido{" +
@@ -72,7 +126,11 @@ public class Pedido implements IDAO{
                 '}';
     }
 
-
+    /**
+     * Calcula o valor total de um pedido
+     * @param produtos lista de produtos onde serão somados os valores de cada um
+     * @return
+     */
     public static float calcularValorTotal(LinkedList<Produto> produtos){
         float valorTotal = 0;
         for (Produto produto: produtos) {
@@ -82,6 +140,14 @@ public class Pedido implements IDAO{
 
     }
 
+    /**
+     * Realiza o pagamento do Pedido
+     * @param pagamento guarda o pedido e o cliente responsável
+     * @param cartao cartao que vai pagar a compra
+     * @param produtos lista de produtos que o cliente escolheu
+     * @param cliente cliente que vai pagar o Pedido
+     * @param pedido Pedido contendo a lista de produtos e o valor total
+     */
     public static void realizarPagamento(Map<Cliente, Pedido> pagamento, Cartao cartao, LinkedList<Produto> produtos, Cliente cliente, Pedido pedido){
         System.out.println("=====================================");
         if (cartao.getLimiteCartao() >= calcularValorTotal(produtos)) {
@@ -100,6 +166,10 @@ public class Pedido implements IDAO{
 
     }
 
+    /**
+     * Grava o pedido no banco de dados
+     * @param pedido
+     */
     @Override
     public void gravarPedido(Object pedido) {
         System.out.println("=================================");

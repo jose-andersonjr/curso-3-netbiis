@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="curso-3-netbiis" />
         <module name="Desafios" />
         <module name="Desafios - Curso 3" />
       </profile>

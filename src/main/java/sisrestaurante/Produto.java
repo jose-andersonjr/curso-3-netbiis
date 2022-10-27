@@ -1,5 +1,17 @@
+/******************************/
 package sisrestaurante;
 
+/******************************/
+/**
+ * <h1>Produto</h1>
+ * Esta classe pode instanciar objeto do tipo Produto para que as categorias de produtos possam instanciá-la;
+ * <p>
+ * @author José Anderson
+ * @version 1.0
+ * @since 15-10-2022
+ * </p>
+ */
+/****************************/
 public abstract class Produto implements IDAO{
     private float preco;
     private String nome;
@@ -11,6 +23,14 @@ public abstract class Produto implements IDAO{
 
     // Constructors
 
+    /**
+     * Construtor de Produto, cria uma objeto produto
+     * @param nome
+     * @param preco
+     * @param idProduto
+     * @param descricao
+     * @param imagem
+     */
     public Produto(String nome, float preco, int idProduto, String descricao, String imagem) {
         this.preco = preco;
         this.nome = nome;
@@ -22,6 +42,10 @@ public abstract class Produto implements IDAO{
 
     //Getters and Setters
 
+    /**
+     *
+     * @return
+     */
     public float getPreco() {
         return preco;
     }
