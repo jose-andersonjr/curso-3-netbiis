@@ -2,16 +2,23 @@ package abctreinamentosv2;
 
 import java.nio.file.Paths;
 import java.util.*;
-import java.util.LinkedHashMap;
+import java.util.HashMap;
+import java.util.TreeMap;
 
 
 
 public class LojaVirtual {
-    private static Map<Cliente, Set<Curso>> pagamentos = new LinkedHashMap<>(); // Recebe um cliente e a lista de cursos desse cliente
+    private static Map<Cliente, Set<Curso>> pagamentos = new HashMap<>(); // Recebe um cliente e a lista de cursos desse cliente
 
+    public static void mostrarOrdenado(Map<Cliente, Set<Curso>> pagamentos){
+        for (Map.Entry<Cliente, Set<Curso>> entrada: pagamentos.entrySet()){
+            System.out.println(entrada.getKey() +" == "+ entrada.getValue());
+        }
+    }
 
     public static void ordenarClientesNome(Map<Cliente, Set<Curso>> pagamentos){
-
+        Map<Cliente, Set<Curso>> ordenadoNome = new TreeMap<Cliente, Set<Curso>>(pagamentos);
+        mostrarOrdenado(ordenadoNome);
     }
 
     public static void menuOpcoes(Cliente cliente, Set<Curso> cursos){
@@ -82,15 +89,17 @@ public class LojaVirtual {
 
 
         // Criar a lista de cursos do cliente
-        Set<Curso> cursosAnderson = new LinkedHashSet<>();
-        Set<Curso> cursosAntonio = new LinkedHashSet<>();
-        Set<Curso> cursosWallace = new LinkedHashSet<>();
+        Set<Curso> cursosAnderson = new HashSet<>();
+        Set<Curso> cursosAntonio = new HashSet<>();
+        Set<Curso> cursosWallace = new HashSet<>();
 
         // Menu de opções
         menuOpcoes(anderson, cursosAnderson); // Inserindo os cursos em cada cliente
         menuOpcoes(antonio, cursosAntonio); // Inserindo os cursos em cada cliente
         menuOpcoes(wallace, cursosWallace); // Inserindo os cursos em cada cliente
 
+        // Ordenações
+        ordenarClientesNome(pagamentos);
 
 
     }

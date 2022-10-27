@@ -16,7 +16,7 @@ defendeu que o uso dessa estrutura não era adequado, então ambos ganharam estr
 
 Aula 20/10:
 1. Baseado na aplicação 'Loja Virtual' construída na Unidade 4, faça o que se pede com o uso de lambdas e stream.
-1.a) Criar um método para ordenar todos os clientes.
+1.a) Criar um método para ordenar todos os clientes pelo nome.
 1.b) Criar um método para listar o total de receita auferida
 1.c) Criar um método para listar todos os clientes por ordem de valor gasto na aquisição dos cursos
 
